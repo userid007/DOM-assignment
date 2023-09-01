@@ -24,9 +24,15 @@ function fourth() {
   document.querySelector("img").src = "./logo.jpeg";
 }
 function fifth() {
-  document.querySelector("ul").children[2].innerHTML = "Projects";
-  const button = document.createElement("button");
-  button.innerHTML = "Support Me";
-  document.querySelector(".hero-right-section-btns").appendChild(button);
+  // 1st way to solve this problem
+  // document.querySelector("ul").children[2].innerHTML = "Projects";
+  // const button = document.createElement("button");
+  // button.innerHTML = "Support Me";
+  // document.querySelector(".hero-right-section-btns").appendChild(button);
+
+  const target = document.getElementsByClassName("hero-right-section-btns")[0].firstElementChild;
+  const newtarget = target.cloneNode(true);
+  newtarget.innerText = "Support Me";
+  target.after(newtarget);
 }
 def[random]();
